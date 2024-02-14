@@ -1,1 +1,1 @@
-export default {"styles": {"global": {":root": {}, "body": {"fontFamily": "Orbitron", "color": "#0abdc6", "background": "#ea00d9"}}}}
+export default {"styles": {"global": {":root": {}, "body": {"fontFamily": "Orbitron", "color": "#0abdc6", "background": "#711c91"}}}}

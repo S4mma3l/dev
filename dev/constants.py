@@ -1,0 +1,1 @@
+INSTAGRAM_URL="https://www.instagram.com/wicked_nails_studio/"
