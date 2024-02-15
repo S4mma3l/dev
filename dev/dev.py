@@ -3,6 +3,10 @@ import dev.styles.styles as styles
 from dev.styles.styles import Size
 from dev.views.navbar import navbar
 from dev.views.header import header
+from dev.views.calendar import calendar
+from dev.views.instructions import instructions
+from dev.views.footer import footer
+from dev.views.carousel import cards
 
 def index() -> rx.Component:
     return rx.box(
@@ -10,13 +14,17 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
-                header(),
-                header(),
-                header(),
+                calendar(),
+                cards(),
+                instructions(),
+                footer(),
                 width="100%",
                 spacing=Size.BIGGER.value
             )
-        )    
+        ),
+        
+        
+        
     )
 
 

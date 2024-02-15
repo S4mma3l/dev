@@ -1,15 +1,23 @@
 import reflex as rx
 import dev.styles.styles as styles
+import dev.constants as constants
 from dev.styles.fonts import Font
 from dev.styles.styles import Size, Color, TextColor
 
 def header() -> rx.Component:
     return rx.vstack(
+         rx.button(
+             rx.icon(tag="moon"),
+             on_click=rx.toggle_color_mode,
+             color=Color.TERCIARY.value,
+         ),
+        
         rx.heading(
             "Wicked Nails 2024",
             font= Font.DEFAULT.value,
             size="lg",
-            padding_bottom=Size.DEFAULT.value
+            padding_bottom=Size.DEFAULT.value,
+            font_size=Size.BIGGER.value
         ),
         rx.flex(
             rx.image(
@@ -22,13 +30,16 @@ def header() -> rx.Component:
             rx.vstack(
                 rx.box(
                     rx.text("Feliz Dia"),
-                    rx.text("Para Todos")
+                    rx.text("Para Todos"),
+                    class_name="nes-container is-dark",
+                    font_size=Size.BIG.value
                 ),
                 rx.span(
                     "Pagina de Nails ",
                     rx.span(
                         "Se Feliz ",
-                        color=TextColor.ACCENT.value    
+                        color=TextColor.ACCENT.value,
+                        font_size=Size.DEFAULT.value  
                     ),
                     ";-)"
                 ),
@@ -39,19 +50,19 @@ def header() -> rx.Component:
                     "Sera Genial!!"
                 ),
                 rx.link(
-                    "Vuelve Pronto!!",
-                    href="",
+                    "#nailsaddict",
+                    href=constants.NAILS_HASHTAG,
                     is_external=True,
                     color=TextColor.TERCIARY.value,
                     padding_top=Size.BIG.value,
                     font_size=Size.MEDIUM.value
                 ),
-                align_items="start",
+                
             ),
             flex_direction=["column", "column", "column", "row", "row"]
             
         ),
         padding_top=Size.BIGGER.value,
-        style=styles.max_width_style
-           
+        style=styles.max_width_style,
+        
     )

@@ -8,19 +8,34 @@ class Size(Enum):
     SMALL = "0.5em"
     MEDIUM = "0.8em"
     DEFAULT = "1em"
-    BIG = "2em"
-    BIGGER = "4em"
+    BIG = "1.5em"
+    BUTTON = "2.25"
+    BIGGER = "3em"
     SPECIAL = "16em"
 
 STYLESHEETS = [
-    "https://unpkg.com/nes.css/css/nes-core.min.css",
-    "https://fonts.googleapis.com/css?family=Orbitron&display=swap"
+    "https://unpkg.com/nes.css@latest/css/nes.min.css",
+    "https://fonts.googleapis.com/css?family=Orbitron&display=swap",
 ]
 
 BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
     "color": TextColor.PRIMARY.value,
-    "background": Color.PRIMARY.value
+    "background": Color.PRIMARY.value,
+    rx.heading: {
+        "font_family": Font.DEFAULT.value,
+        "color": TextColor.PRIMARY.value
+    },
+    rx.Link: {
+        "text_decoration": "none",
+        "_hover": {
+            "color": TextColor.ACCENT.value,
+            "text_decoration": "none"
+        } 
+    },
+    rx.Span: {
+        "font_size": Size.BIG.value
+    },
 }
 
 max_width_style = dict(

@@ -19,7 +19,8 @@ def navbar() -> rx.Component:
                 "instagram",
                 constants.INSTAGRAM_URL
             ),
-            width="100%"
+            width="100%",
+            font_size=Size.BIG.value
         ),
         bg=Color.PRIMARY.value,
         position="sticky",
